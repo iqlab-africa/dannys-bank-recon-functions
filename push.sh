@@ -6,7 +6,7 @@
 
 
 # 🍎🍎🍎🍎 COMMAND TO PUSH CODE
-#  ./push.sh ~/.ssh/i_account2 git@github.com:iqlab-africa/dannys-bank-recon-functions.git "🚼 added data api"
+#  ./push.sh ~/.ssh/i_account2 git@github.com:iqlab-africa/dannys-bank-recon-functions.git "🅿️ updated README"
 
 
 echo "🔴 🔴 🔴 🔴 🔴 Generic GitHub Push script starting ..."
