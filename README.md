@@ -23,6 +23,10 @@ Danny's Bank Recon project aims to streamline and automate bank reconciliation p
 - **TypeScript**: The functions are written in TypeScript, ensuring type safety and robust code.
 - **Azure Postgres**: The database is hosted on Azure Postgres, storing all necessary data for the application.
 - **Sequelize ORM**: Sequelize is used as the ORM to interact with the Postgres database, providing an abstraction layer over raw SQL queries.
+- 
+<img width="820" alt="Screenshot 2024-08-22 at 05 15 21" src="https://github.com/user-attachments/assets/2cc2490d-35be-4f8c-bc21-ae6acdb5324e">
+
+<img width="820" alt="Screenshot 2024-08-22 at 05 15 21" src="https://github.com/user-attachments/assets/4f9ba71e-5fd0-4e3b-9fa2-e2c726680a96">
 
 ## Prerequisites
 
@@ -85,6 +89,7 @@ To run database migrations using Sequelize, use the following commands:
 ## Deployment
 
 The backend API can be deployed to Azure using the Azure CLI or Azure DevOps pipelines. Ensure that all environment variables are correctly set in the Azure environment.
+
 
 ### Example Azure CLI Deployment
 
