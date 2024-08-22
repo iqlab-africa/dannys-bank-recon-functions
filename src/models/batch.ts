@@ -1,27 +1,27 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
-
-//            INSERT INTO fin.batch (branch_code, batch_date, operator_name, sub_total, discount, total, posted)
+import { Table, Column, Model, DataType, HasMany } from "sequelize-typescript";
+import { BatchTransaction } from "./batch_transactions";
 
 @Table
 export class Batch extends Model {
   @Column({
     primaryKey: true,
-    type: DataType.BIGINT,
+    type: DataType.CHAR,
+    unique: true,
     comment: "The famous identifier",
   })
-  batchId: number;
+  batch_id: string;
 
   @Column(DataType.CHAR)
-  branchCode: string;
+  branch_code: string;
 
   @Column(DataType.CHAR)
-  batchDate: string;
+  batch_date: string;
 
   @Column(DataType.CHAR)
-  operatorName: string;
+  operator_name: string;
 
   @Column(DataType.FLOAT)
-  subTotal: number;
+  sub_total: number;
 
   @Column(DataType.FLOAT)
   discount: number;
@@ -32,6 +32,10 @@ export class Batch extends Model {
   @Column(DataType.BOOLEAN)
   posted: boolean;
 
-  @Column(DataType.DATE)
-  date: Date;
+ 
+
+  // Define association
+  // @HasMany(() => BatchTransaction, { foreignKey: "batch_id" })
+  // transactions: BatchTransaction[];
 }
+

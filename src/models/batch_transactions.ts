@@ -1,28 +1,30 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  BelongsTo,
+  PrimaryKey,
+} from "sequelize-typescript";
+import { Batch } from "./batch";
 
-/*
-INSERT INTO fin.batch_transactions
-                    (booking_date, value_date, remittance_info, reference,
-                    amount, discount, currency, credit_debit_indicator, batch_id)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-*/
 @Table
 export class BatchTransaction extends Model {
   @Column({
     primaryKey: true,
-    type: DataType.BIGINT,
-    comment: "The famous identifier",
+    type: DataType.CHAR, // Assuming it should be an integer
+    unique: true,
   })
-  batchTransactionId: number;
+  batch_transaction_id: string;
 
   @Column(DataType.CHAR)
-  bookingDate: string;
+  booking_date: string;
 
   @Column(DataType.CHAR)
-  valueDate: string;
+  value_date: string;
 
   @Column(DataType.CHAR)
-  remittanceInfo: string;
+  remittance_info: string;
 
   @Column(DataType.CHAR)
   reference: string;
@@ -37,11 +39,13 @@ export class BatchTransaction extends Model {
   posted: boolean;
 
   @Column(DataType.CHAR)
-  creditDebitIndicator: string;
+  credit_debit_indicator: string;
 
+  // Foreign key definition
   @Column(DataType.CHAR)
-  batchId: string;
+  batch_id: string;
 
-  @Column(DataType.DATE)
-  date: Date;
+  // Define association
+  // @BelongsTo(() => Batch, { foreignKey: "batch_id" })
+  // batch: Batch;
 }

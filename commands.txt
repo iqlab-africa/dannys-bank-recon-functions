@@ -1,0 +1,24 @@
+(base) aubreymalabie@Aubreys-MacBook-Pro dannys-bank-recon-functions % psql -d postgres
+psql (16.4 (Homebrew))
+Type "help" for help.
+
+postgres=# CREATE USER aubreym WITH ENCRYPTED PASSWORD 'kktiger3';
+CREATE ROLE
+postgres=# CREATE ROLE aubreym CREATEDB;
+ERROR:  role "aubreym" already exists
+postgres=# ALTER ROLE aubreym CREATEDB;
+ALTER ROLE
+postgres=# SELECT usename FROM pg_user;
+    usename    
+---------------
+ aubreymalabie
+ aubreym
+(2 rows)
+
+postgres=# CREATE DATABASE dannysrecondb;
+CREATE DATABASE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE dannysrecondb TO aubreym;
+GRANT
+postgres=# GRANT ALL PRIVILEGES ON DATABASE dannysrecondb TO aubreymalabie;
+GRANT
+postgres=# 
